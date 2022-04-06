@@ -31,7 +31,7 @@ class ProjectCrudController extends AbstractCrudController
             TextField::new('githubLink'),
             TextField::new('githubLink'),
             AssociationField::new('technos'),
-            AssociationField::new('gallery'),
+            //AssociationField::new('gallery'),
 
         ];
     }
