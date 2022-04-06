@@ -45,6 +45,11 @@ class TimelineRepository extends ServiceEntityRepository
         }
     }
 
+    public function findAll()
+    {
+        return $this->findBy(array(), array('year' => 'DESC'));
+    }
+
     // /**
     //  * @return Timeline[] Returns an array of Timeline objects
     //  */
