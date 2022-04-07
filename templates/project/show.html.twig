@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Project
+  {{ project.id }}!{% endblock %}
+
+{% block body %}
+</br>
+<div class="card">
+  <div class="card-body">
+    <h1 class="card-title">{{ project.title }}</h1>
+    <p class="card-text">{{ project.description|raw }}</p>
+    <p class="card-text">
+      <small class="text-muted">Last updated:
+        {{ project.updatedAt|date('d-m-Y') }}
+      </small>
+    </p>
+  </div>
+  {#<img src="{{ project.gallery }}" class="card-img-bottom" alt="gallery"/>#}
+</div>
+
+{% endblock %}
