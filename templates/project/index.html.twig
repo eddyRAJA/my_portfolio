@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}All projects!{% endblock %}
+
+{% block body %}
+  <h1>My projects</h1>
+
+  {% for project in projects %}
+  </br>
+  <div class="card">
+    <div class="card-header">
+      <h5 class="card-title">
+        {{ project.title }}
+      </h5>
+    </div>
+    <div class="card-body">
+      <p class="card-text">{{ project.pitch|raw }}</p>
+      <a href="#" class="btn btn-primary">Know more</a>
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock %}
