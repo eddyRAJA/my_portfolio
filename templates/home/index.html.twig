@@ -3,8 +3,8 @@
 {% block title %}AboutMe!{% endblock %}
 
 {% block body %}
-  <div class="text-center">
-    <img src="{{ asset('build/images/logo.png') }}" alt=""/>
+  <div class="justify-content-center">
+    <img src="{{ asset('build/images/logo.png') }}" class="img-fluid" alt=""/>
   </div>
   <div class="text-center">
     <h1>
@@ -20,7 +20,7 @@
       {{ aboutMe.githubLink }}
     </p>
     <p>
-      <img src="{{ aboutMe.avatar }}" alt=""/>
+      <img src="{{ aboutMe.avatar }}" class="img-fluid" alt=""/>
     </p>
     <p>
       {{ aboutMe.description|raw }}
