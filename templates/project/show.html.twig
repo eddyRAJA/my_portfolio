@@ -14,8 +14,18 @@
         {{ project.updatedAt|date('d-m-Y') }}
       </small>
     </p>
+
+    <div class="container-fluid justify-content-center">
+      <ul class="nav justify-content-center   bg-primary w-100" style="--bs-bg-opacity: .9">
+        <li class="nav-item">
+          <a href="{{ project.githubLink }}" class="btn text-white" target="_blank">github</a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ project.githubLink }}" class="btn text-white" target="_blank">Backlog</a>
+        </li>
+      </ul>
+    </div>
   </div>
-  {#<img src="{{ project.gallery }}" class="card-img-bottom" alt="gallery"/>#}
 </div>
 
 {% endblock %}
