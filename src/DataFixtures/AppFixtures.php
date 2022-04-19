@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use Faker\Factory;
+use App\Entity\Admin;
 use App\Entity\Techno;
 use App\Entity\AboutMe;
 use App\Entity\Contact;
@@ -11,30 +12,52 @@ use App\Entity\Timeline;
 use App\Entity\Illustration;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class AppFixtures extends Fixture
 {
-    public function load(ObjectManager $manager): void
+    //private $encoder;
+ private $passwordHasher;
+     
+ //public function __construct(UserPasswordEncoderInterface $encoder)
+ public function __construct(UserPasswordHasherInterface $passwordHasher)
+ {
+     //$this->encoder = $encoder;
+     $this->passwordHasher = $passwordHasher;
+ }
+    public function load(ObjectManager $manager)
     {
+        
         $faker = Factory::create();
 
-        // $product = new Product();
-
         // AboutMe
-/*        $aboutme = new AboutMe();
+    /*    $aboutme = new AboutMe();
         $aboutme->setTitle($faker->sentence(3))
             ->setEmail($faker->email())
-            ->setGithubLink($faker->email())
+            ->setGithubLink($faker->sentence(2))
             ->setFunction($faker->jobTitle())
-            ->setAvatar($faker->imageUrl($width = 64, $height = 48) )
+            //->setAvatar($faker->imageUrl($width = 64, $height = 48) )
             ->setDescription($faker->paragraph(4));
 
-        $manager->persist($aboutme);
+        $manager->persist($aboutme);  */
 
-*/        // Timeline
+        // Create user admin
+        $admin = new Admin();
+        $admin->setUsername('Admino')
+            ->setRoles(['ROLE_ADMIN'])
+            //$admin->setPassword($this->encoder->encodePassword(
+            ->setPassword($this->passwordHasher->hashPassword(
+                $admin,
+                'admipass'
+            ));
+
+        $manager->persist($admin);
+
+        // Timeline
         for ($i=0; $i < 5; $i++) { 
             $timeline = new Timeline();
             $timeline->setYear($faker->numberBetween(1990, 2022))
+                ->setTitle($faker->sentence(5))
                 ->setDescription($faker->paragraph(4));
 
             $manager->persist($timeline);
