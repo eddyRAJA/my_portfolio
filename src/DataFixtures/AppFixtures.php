@@ -17,14 +17,15 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 class AppFixtures extends Fixture
 {
     //private $encoder;
- private $passwordHasher;
-     
- //public function __construct(UserPasswordEncoderInterface $encoder)
- public function __construct(UserPasswordHasherInterface $passwordHasher)
- {
-     //$this->encoder = $encoder;
-     $this->passwordHasher = $passwordHasher;
- }
+    private $passwordHasher;
+        
+    //public function __construct(UserPasswordEncoderInterface $encoder)
+    public function __construct(UserPasswordHasherInterface $passwordHasher)
+    {
+        //$this->encoder = $encoder;
+        $this->passwordHasher = $passwordHasher;
+    }
+
     public function load(ObjectManager $manager)
     {
         
