@@ -8,12 +8,15 @@
   </br>
   <div class="card">
     <div class="card-header">
-      {{ event.year }}
+      <h2>{{ event.title }}</h2>
     </div>
     <div class="card-body">
-      <h5 class="card-title">Title</h5>
+      <h6 class="card-title">Description:</h6>
       <p class="card-text">{{ event.description|raw }}</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <small>
+        <p>{{ event.year }}</p>
+      </small>
+      <a href="#" class="btn btn-primary btn-sm">About it</a>
     </div>
   </div>
 {% endfor %}

@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Admin;
 use App\Entity\Techno;
 use App\Entity\AboutMe;
 use App\Entity\Contact;
@@ -33,12 +34,12 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('About me', 'fas fa-list', AboutMe::class);
-        yield MenuItem::linkToCrud('My contacts', 'fas fa-list', Contact::class);
-        yield MenuItem::linkToCrud('The illustrations', 'fas fa-list', Illustration::class);
-        yield MenuItem::linkToCrud('My projects', 'fas fa-list', Project::class);
-        yield MenuItem::linkToCrud('The technos', 'fas fa-list', Techno::class);
-        yield MenuItem::linkToCrud('My timeline', 'fas fa-list', Timeline::class);
+        yield MenuItem::linkToCrud('About me', 'fas fa-address-card', AboutMe::class);
+        yield MenuItem::linkToCrud('My contacts', 'fas fa-users', Contact::class);
+        yield MenuItem::linkToCrud('The illustrations', 'fas fa-images', Illustration::class);
+        yield MenuItem::linkToCrud('My projects', 'fas fa-newspaper', Project::class);
+        yield MenuItem::linkToCrud('The technos', 'fas fa-book', Techno::class);
+        yield MenuItem::linkToCrud('My timeline', 'fas fa-user-graduate', Timeline::class);
         yield MenuItem::linkToRoute('Back to the website', 'fas fa-sing-out', 'app_home');
 
     }

@@ -28,10 +28,9 @@ class ProjectCrudController extends AbstractCrudController
             TextEditorField::new('pitch'),
             TextEditorField::new('description'),
             TextField::new('githubLink'),
-            TextField::new('githubLink'),
+            TextField::new('website'),
             AssociationField::new('technos'),
             //AssociationField::new('gallery'),
-
         ];
     }
 }
