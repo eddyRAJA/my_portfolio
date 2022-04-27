@@ -42,6 +42,17 @@ class AppFixtures extends Fixture
 
         $manager->persist($aboutme);  */
 
+        $aboutme = new AboutMe();
+        $aboutme->setTitle('my title')
+            ->setEmail('my@email.com')
+            ->setGithubLink('my@git.com')
+            ->setFunction('D.W.J')
+            //->setAvatar($faker->imageUrl($width = 64, $height = 48) )
+            ->setDescription('litle description');
+
+        $manager->persist($aboutme);  
+
+
         // Create user admin
         $admin = new Admin();
         $admin->setUsername('Admino')
