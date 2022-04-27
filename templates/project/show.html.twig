@@ -1,0 +1,32 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Project
+  {{ project.id }}!{% endblock %}
+
+{% block body %}
+</br>
+<div class="card">
+  <div class="card-body">
+    <h1 class="card-title">{{ project.title }}</h1>
+  </br>
+  <p class="card-text">{{ project.description|raw }}</p>
+</br>
+<p class="card-text">
+  <small class="text-muted">Last updated:
+    {{ project.updatedAt|date('d-m-Y') }}
+  </small>
+</p>
+<div class="container-fluid justify-content-center">
+  <ul class="nav justify-content-center   bg-primary w-100" style="--bs-bg-opacity: .9">
+    <li class="nav-item">
+      <a href="{{ project.githubLink }}" class="btn text-white" target="_blank">github</a>
+    </li>
+    <li class="nav-item">
+      <a href="{{ project.website }}" class="btn text-white" target="_blank">Website</a>
+    </li>
+  </ul>
+</div>
+</div>
+</div>
+
+{% endblock %}

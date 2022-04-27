@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Send message!{% endblock %}
+
+{% block body %}
+  <h1>Contact me.</h1>
+</br>
+<div class="mb-3">
+  {{ form_start(form) }}
+  {{ form_row(form.firstname) }}
+  {{ form_row(form.lastname) }}
+  {{ form_row(form.email) }}
+  {{ form_row(form.message) }}
+  <div class="modal-foote"><br/>
+    <button class="btn-small primary">Send</button>
+  </div>
+  {{ form_end(form) }}
+</div>
+
+{#error! Email "Paul" does not comply with addr-spec of RFC 2822.#}
+
+{% endblock %}

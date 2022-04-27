@@ -1,0 +1,24 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Know more?{% endblock %}
+
+{% block body %}
+
+  {% for event in timeline %}
+  </br>
+  <div class="card">
+    <div class="card-header">
+      <h2>{{ event.title }}</h2>
+    </div>
+    <div class="card-body">
+      <h6 class="card-title">Description:</h6>
+      <p class="card-text">{{ event.description|raw }}</p>
+      <small>
+        <p>{{ event.year }}</p>
+      </small>
+      <a href="#" class="btn btn-primary btn-sm">About it</a>
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock %}
