@@ -17,11 +17,13 @@
   {{ aboutMe.email }}
 </p>
 <p>
-  {{ aboutMe.githubLink }}
+  {#{ aboutMe.githubLink }#}
 </p>
 <p>
   <img src="{{ aboutMe.avatar }}" class="img-fluid" alt=""/>
 </p>
+</div>
+<div class="text-left">
 <p>
   {{ aboutMe.description|raw }}
 </p>
